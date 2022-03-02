@@ -1,0 +1,11 @@
+package study.a.b.c.com.member.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class MemberController {
+	
+	Logger logger = Logger.getLogger(MemberController.class);
+
+	private MemberService memberservice;
+}

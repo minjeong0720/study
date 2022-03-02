@@ -1,0 +1,14 @@
+package a.b.c.com.member.controller;
+
+import org.apache.log4j.Logger;
+import org.springframework.stereotype.Controller;
+
+import a.b.c.com.member.service.MemberService;
+
+@Controller
+public class MemberController {
+	
+	Logger logger = Logger.getLogger(MemberController.class);
+
+	private MemberService memberservice;
+}

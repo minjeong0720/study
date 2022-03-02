@@ -1,3 +1,9 @@
 INDEX VERSION 1.131
+C:\01.project\minjoy\project_work\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\845831905.index
+\study\src
 C:\01.project\minjoy\project_work\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1950968944.index
+\study\src
+C:\01.project\minjoy\project_work\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3130327488.index
+\study\src
+C:\01.project\minjoy\project_work\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2151232832.index
 \study\src

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "a.b.c.com.login.dao.LoginDAO">
+
+<select id="loginCheck" parameterType="memberVO" resultType="memberVO">
+		SELECT mid,
+			   mpw
+		FROM   project 
+		WHERE deleteyn = 'Y'
+		AND   mid = #{mid, jdbcType=VARCHAR}
+		AND	  mpw = #{mpw, jdbcType=VARCHAR}
+</select>
+</mapper>

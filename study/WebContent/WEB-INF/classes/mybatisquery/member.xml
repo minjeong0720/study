@@ -6,25 +6,20 @@
 
 <insert id="memberInsert" parameterType="memberVO">
 
-	INSERT INTO LDHMEMBER(
-												MNAME		<!-- COLUMN 1 -->
-											   ,MID		    <!-- COLUMN 2 -->
-											   ,MPW			<!-- COLUMN 3 -->
-											   ,MBIRTH		<!-- COLUMN 4 -->
-											   ,DELETEYN
-											   ,INSERTDATE
-											   ,UPDATEDATE
-					)
-				VALUES
-							(
-									#{mname, jdbcType=VARCHAR}		<!-- placeholer 1 --> 
-								   ,#{mid, jdbcType=VARCHAR} 	    <!-- placeholer 2 --> 
-	                  			   ,#{mpw, jdbcType=VARCHAR} 		    <!-- placeholer 3 -->
-	                            ,#{mbirth, jdbcType=VARCHAR}  		<!-- placeholer 4 -->
-	                          	,'Y'  							    <!-- placeholer 5 -->
-	                          	,SYSDATE  							<!-- placeholer 6 -->
-	                          	,SYSDATE 						    <!-- placeholer 7 -->
-							
+	INSERT INTO project(
+						MID,			<!-- COLUMN 1 -->
+					    MPW,		    <!-- COLUMN 2 -->
+					    MNAME,			<!-- COLUMN 3 -->
+					    DELETEYN,		<!-- COLUMN 4 -->
+					    INSERTDATE,		<!-- COLUMN 5 -->
+					    UPDATEDATE		<!-- COLUMN 6 -->
+					) VALUES (
+							   #{mid, jdbcType=VARCHAR},		<!-- placeholer 1 --> 
+							   #{mpw, jdbcType=VARCHAR}, 		<!-- placeholer 2 --> 
+                  			   #{mname, jdbcType=VARCHAR},	    <!-- placeholer 3 -->
+	                           'Y',							    <!-- placeholer 4 -->
+	                           SYSDATE,  						<!-- placeholer 5 -->
+	                           SYSDATE 						    <!-- placeholer 6 -->
 							)
 </insert>
 

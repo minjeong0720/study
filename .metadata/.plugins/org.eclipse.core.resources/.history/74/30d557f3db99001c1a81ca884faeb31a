@@ -1,0 +1,70 @@
+package a.b.c.com.login.dao;
+
+import java.util.List;
+import java.util.Map;
+
+import org.apache.log4j.Logger;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import a.b.c.com.login.vo.TempAuthNumVO;
+import a.b.c.com.login.vo.TempPwVO;
+import a.b.c.com.mem.vo.MemberVO;
+
+@Repository
+public class LoginDAOImpl implements LoginDAO {
+	Logger logger = Logger.getLogger(LoginDAOImpl.class);
+	
+	@Autowired(required=false)
+	private SqlSessionTemplate sqlSession;
+
+	
+	@Override
+	public List<MemberVO> loginCheck(MemberVO mvo) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("loginCheck", mvo);
+	}
+
+
+	@Override
+	public List<MemberVO> emailCheck(MemberVO mvo) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("emailCheck", mvo);
+	}
+
+
+	@Override
+	public int tempAuthNumInsert(TempAuthNumVO tvo) {
+		// TODO Auto-generated method stub
+		return (Integer)sqlSession.insert("tempAuthNumInsert", tvo);
+	}
+
+
+	@Override
+	public List<MemberVO> emailIdFind(MemberVO mvo) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("emailIdFind", mvo);
+	}
+
+
+	@Override
+	public List<MemberVO> pwIdCheck(MemberVO mvo) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("pwIdCheck", mvo);
+	}
+
+
+	@Override
+	public List<MemberVO> pwEmailCheck(MemberVO mvo) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("pwEmailCheck", mvo);
+	}
+
+
+	@Override
+	public int tempPwInsert(TempPwVO tvo) {
+		// TODO Auto-generated method stub
+		return (Integer)sqlSession.insert("tempPwInsert", tvo);
+	}
+}

@@ -1,0 +1,19 @@
+package a.b.c.com.login.dao;
+
+
+@Repository
+public class LoginDAOImpl implements LoginDAO {
+	Logger logger = Logger.getLogger(LoginDAOImpl.class);
+	
+	@Autowired(required=false)
+	private SqlSessionTemplate sqlSession;
+
+	
+	@Override
+	public List<MemberVO> loginCheck(MemberVO mvo) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("loginCheck", mvo);
+	}
+
+
+}

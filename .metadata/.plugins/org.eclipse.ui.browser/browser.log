@@ -1,0 +1,27 @@
+
+3월 02, 2022 11:39:12.428 NEW SESSION
+3월 02, 2022 11:39:12.429 [19024:3780:0302/113912.425:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+3월 02, 2022 11:39:12.430 [19024:3780:0302/113912.425:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+3월 02, 2022 11:39:12.431 [19024:3780:0302/113912.425:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+3월 02, 2022 11:39:12.433 [19024:3780:0302/113912.432:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+3월 02, 2022 11:39:12.461 [19024:15672:0302/113912.461:ERROR:device_event_log_impl.cc(214)] [11:39:12.460] USB: usb_service_win.cc:391 Could not read device interface GUIDs: 지정된 파일을 찾을 수 없습니다. (0x2)
+3월 02, 2022 11:39:12.463 [19024:15672:0302/113912.462:ERROR:device_event_log_impl.cc(214)] [11:39:12.462] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 11:39:12.465 [19024:15672:0302/113912.464:ERROR:device_event_log_impl.cc(214)] [11:39:12.463] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 11:39:12.475 [19024:15672:0302/113912.474:ERROR:device_event_log_impl.cc(214)] [11:39:12.474] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 11:46:35.457 [19024:15672:0302/114635.456:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+3월 02, 2022 12:09:03.197 [2864:11164:0302/120903.196:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+3월 02, 2022 12:09:03.198 [2864:11164:0302/120903.196:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+3월 02, 2022 12:09:03.198 [2864:11164:0302/120903.196:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+3월 02, 2022 12:09:03.204 [2864:11164:0302/120903.203:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+3월 02, 2022 12:09:03.235 [2864:4652:0302/120903.234:ERROR:device_event_log_impl.cc(214)] [12:09:03.234] USB: usb_service_win.cc:391 Could not read device interface GUIDs: 지정된 파일을 찾을 수 없습니다. (0x2)
+3월 02, 2022 12:09:03.236 [2864:4652:0302/120903.236:ERROR:device_event_log_impl.cc(214)] [12:09:03.236] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 12:09:03.237 [2864:4652:0302/120903.237:ERROR:device_event_log_impl.cc(214)] [12:09:03.238] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 12:09:03.244 [2864:4652:0302/120903.243:ERROR:device_event_log_impl.cc(214)] [12:09:03.244] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 02, 2022 12:25:57.405 [2864:4652:0302/122557.404:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+3월 02, 2022 12:27:52.383 [2864:4652:0302/122752.382:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+3월 02, 2022 12:27:52.385 [2864:4652:0302/122752.384:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+3월 02, 2022 13:02:43.75 [2864:4652:0302/130243.074:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+3월 02, 2022 13:07:47.939 [2864:4652:0302/130747.938:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+3월 02, 2022 13:07:47.940 [2864:4652:0302/130747.938:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+3월 02, 2022 13:07:47.940 [2864:4652:0302/130747.938:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+3월 02, 2022 14:46:03.86 [2864:4652:0302/144603.085:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost

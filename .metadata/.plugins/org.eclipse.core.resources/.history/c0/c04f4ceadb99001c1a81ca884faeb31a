@@ -1,0 +1,14 @@
+package a.b.c.com.login.service;
+
+import java.util.List;
+
+import a.b.c.com.login.vo.TempAuthNumVO;
+import a.b.c.com.login.vo.TempPwVO;
+import a.b.c.com.mem.vo.MemberVO;
+
+public interface LoginService {
+	
+	public List<MemberVO> loginCheck(MemberVO mvo);
+	
+
+}

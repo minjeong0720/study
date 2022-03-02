@@ -1,0 +1,83 @@
+package a.b.c.com.login.service;
+
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import a.b.c.com.login.dao.LoginDAO;
+import a.b.c.com.login.vo.TempAuthNumVO;
+import a.b.c.com.login.vo.TempPwVO;
+import a.b.c.com.mem.vo.MemberVO;
+
+@Service
+@Transactional
+public class LoginServiceImpl implements LoginService {
+	Logger logger = Logger.getLogger(LoginServiceImpl.class);
+	
+	private LoginDAO loginDAO;
+	
+	@Autowired(required=false)
+	public LoginServiceImpl(LoginDAO loginDAO) {
+		this.loginDAO = loginDAO;
+	}
+
+	@Override
+	public List<MemberVO> loginCheck(MemberVO mvo) {
+		// TODO Auto-generated method stub
+		logger.info("LoginServiceImpl loginCheck() 함수 진입 >>> : ");
+		
+		return loginDAO.loginCheck(mvo);
+	}
+
+	@Override
+	public List<MemberVO> emailCheck(MemberVO mvo) {
+		// TODO Auto-generated method stub
+		logger.info("LoginServiceImpl emailCheck() 함수 진입 >>> : ");
+		
+		return loginDAO.emailCheck(mvo);
+	}
+
+	@Override
+	public int tempAuthNumInsert(TempAuthNumVO tvo) {
+		// TODO Auto-generated method stub
+		logger.info("LoginServiceImpl tempAuthNumInsert() 함수 진입 >>> : ");
+		
+		return loginDAO.tempAuthNumInsert(tvo);
+	}
+
+	@Override
+	public List<MemberVO> emailIdFind(MemberVO mvo) {
+		// TODO Auto-generated method stub
+		logger.info("LoginServiceImpl emailIdFind() 함수 진입 >>> : ");
+		
+		return loginDAO.emailIdFind(mvo);
+	}
+
+	@Override
+	public List<MemberVO> pwIdCheck(MemberVO mvo) {
+		// TODO Auto-generated method stub
+		logger.info("LoginServiceImpl pwIdCheck() 함수 진입 >>> : ");
+		
+		return loginDAO.pwIdCheck(mvo);
+	}
+
+	@Override
+	public List<MemberVO> pwEmailCheck(MemberVO mvo) {
+		// TODO Auto-generated method stub
+		logger.info("LoginServiceImpl pwEmailCheck() 함수 진입 >>> : ");
+		
+		return loginDAO.pwEmailCheck(mvo);
+	}
+
+	@Override
+	public int tempPwInsert(TempPwVO tvo) {
+		// TODO Auto-generated method stub
+		logger.info("LoginServiceImpl tempPwInsert() 함수 진입 >>> : ");
+		
+		return loginDAO.tempPwInsert(tvo);
+	}
+
+}

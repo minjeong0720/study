@@ -1,0 +1,52 @@
+package a.b.c.com.login.controller;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import a.b.c.com.common.K_Session;
+import a.b.c.com.login.service.LoginService;
+import a.b.c.com.member.vo.MemberVO;
+
+public class LoginController {
+	
+	Logger logger = Logger.getLogger(LoginController.class);
+	
+	private LoginService loginSerivce;
+
+	//생성자 오토와이어드
+	@Autowired(required=false)
+	public LoginController(LoginService loginSerivce) {
+		this.loginSerivce = loginSerivce;
+	}
+	
+	//로그인 입력 폼
+	@GetMapping("loginForm")
+	public String loginForm() {
+		logger.info("LoginController loginForm() 함수 진입 >>> : ");
+		return "login/loginForm";
+	}
+	
+	//로그인
+	@PostMapping("login")
+	public String login(HttpServletRequest req, MemberVO mvo, Model model) {
+		logger.info("LoginController login() 함수 진입 >>> : ");
+		
+		mvo.toString();
+		
+		List<MemberVO> listLogin = loginSerivce.loginCheck(mvo);
+		logger.info("LoginController login listLogin.size() >>> : " + listLogin.size());
+
+		if(listLogin.size() == 1) {
+			K_Session ks = K_Session.getInstance();	
+			String kID = ks.getSession(req);
+			
+		}
+	}
+}
