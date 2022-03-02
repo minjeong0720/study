@@ -16,27 +16,45 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="../../images/favicon.png">
+  <link rel="shortcut icon" href="../../images/welcome.jpg">
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script type="text/javascript">
 
 	//회원가입 버튼 클릭시
-	$(document).on("click", "#register", function(){
-	   console.log("sbbtn >>>> : " );
-	   alert("회원가입 버튼 클릭");
-	   var mid = $("#mid").val();
-	   console.log("mid" + mid);
+	//$(document).on("click", "#register", function(){
+	$(document).ready(function(){
+	   console.log("register >>>> : " );
 	   
+	   /*var mid = $("#mid").val();
+	   console.log("mid" + mid);*/
+	   $("#submit").on("click", function(){
+			if($("#mid").val()==""){
+				alert("아이디를 입력해주세요.");
+				$("#mid").focus();
+				return false;
+			}
+			if($("#mpw").val()==""){
+				alert("비밀번호를 입력해주세요.");
+				$("#mpw").focus();
+				return false;
+			}
+			if($("#mname").val()==""){
+				alert("성명을 입력해주세요.");
+				$("#mname").focus();
+				return false;
+			}
+			alert("회원가입이 완료 되었습니다!");
 	   //controller memInsert로 이동
-	   $('#memInsert').attr({
-	      'action': 'memInsert.kmj',
-	      'method' : 'GET',
+	   $('#user').attr({
+	      'action': 'memberInsert.kmj',
+	      'method' : 'POST',
 	      'enctype' : 'application/x-www-form-urlencoded'
-	   }).submit();   
+	   }).submit();  
 	});
-
+	})
+	
 </script>
 </head>
 
@@ -48,38 +66,29 @@
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
               <div class="brand-logo">
-                <img src="../../images/logo.svg" alt="logo">
-              </div>
-              <h4>New here?</h4>
-              <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
-              <form class="pt-3">
+       			 <img src="../../images/welcome.jpg" alt="welcome"></div>
+              <h6>SIGN UP</h6>
+              <h6 class="font-weight-light">환영합니다! 회원가입을 진행해주세요!</h6>
+              
+              <form name="user" id="user" class="pt-3">
               
                 <div class="form-group">
-                  <input type="text" id="mid" placeholder="ID" class="form-control form-control-lg" >
+                  <input type="text" id="mid" name="mid" placeholder="ID" class="form-control form-control-lg" >
                 </div>
                 
                 <div class="form-group">
-                  <input type="password" id="mpw" placeholder="PassWord" class="form-control form-control-lg" >
+                  <input type="password" id="mpw" name="mpw" placeholder="PassWord" class="form-control form-control-lg" >
                 </div>
                 
                 <div class="form-group">
-                  <input type="text" id="mname" placeholder="Username" class="form-control form-control-lg" >
+                  <input type="text" id="mname" name="mname" placeholder="Username" class="form-control form-control-lg" >
                 </div>
                 
-                <div class="mb-4">
-                  <div class="form-check">
-                    <label class="form-check-label text-muted">
-                      <input type="checkbox" class="form-check-input">
-                      I agree to all Terms &amp; Conditions
-                    <i class="input-helper"></i></label>
-                  </div>
-                </div>
                 <div class="mt-3">
-                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../">SIGN UP</a>
-                  <button id="register" value="REGISTER" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"></button>
-                </div>
+                  <button type="submit" id="submit"  class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">SIGN UP</button>
+                </div><!-- onclick="location.href='loginForm.kmj'" -->
                 <div class="text-center mt-4 font-weight-light">
-                  Already have an account? <a href="loginForm.kmj" class="text-primary">Login</a>
+                  	계정이 있으신가요? <a href="loginForm.kmj" class="text-primary">Login</a>
                 </div>
               </form>
             </div>

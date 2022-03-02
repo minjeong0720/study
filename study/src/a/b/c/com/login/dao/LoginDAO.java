@@ -5,7 +5,7 @@ import a.b.c.com.member.vo.MemberVO;
 
 public interface LoginDAO {
 	
-	public List<MemberVO> loginCheck(MemberVO mvo);
-	
+	//public List<MemberVO> loginCheck(MemberVO mvo);
+	public MemberVO loginCheck(MemberVO mvo) throws Exception;
 
 }

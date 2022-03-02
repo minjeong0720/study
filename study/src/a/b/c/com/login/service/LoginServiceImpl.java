@@ -23,7 +23,7 @@ public class LoginServiceImpl implements LoginService {
 	}
 
 	@Override
-	public List<MemberVO> loginCheck(MemberVO mvo) {
+	public MemberVO loginCheck(MemberVO mvo) throws Exception {
 		// TODO Auto-generated method stub
 		logger.info("LoginServiceImpl loginCheck() 함수 진입 >>> : ");
 		

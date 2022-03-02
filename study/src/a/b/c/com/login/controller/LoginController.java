@@ -3,6 +3,7 @@ package a.b.c.com.login.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import a.b.c.com.common.K_Session;
 import a.b.c.com.login.service.LoginService;
@@ -21,6 +23,34 @@ public class LoginController {
 	Logger logger = Logger.getLogger(LoginController.class);
 	
 	private LoginService loginSerivce;
+	
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public String login(MemberVO vo, HttpServletRequest req, RedirectAttributes rttr) throws Exception{
+		logger.info("post login");
+		
+		HttpSession session = req.getSession();
+		MemberVO login = loginSerivce.loginCheck(vo);
+		
+		if(login == null) {
+			session.setAttribute("member", null);
+			rttr.addFlashAttribute("msg", false);
+		}else {
+			session.setAttribute("member", login);
+		}
+		
+		return "redirect:/";
+	}
+	
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(HttpSession session) throws Exception{
+		
+		session.invalidate();
+		
+		return "redirect:/";
+	}
+	
+	
+	/*private LoginService loginSerivce;
 
 	//생성자 오토와이어드
 	@Autowired(required=false)
@@ -38,8 +68,8 @@ public class LoginController {
 	}
 	
 	//로그인
-	//@PostMapping("login")
-	@RequestMapping(value="login", method=RequestMethod.POST)
+	@PostMapping("login")
+	//@RequestMapping(value="login", method=RequestMethod.POST)
 	public String login(HttpServletRequest req, MemberVO mvo, Model model) {
 		logger.info("LoginController login() 함수 진입 >>> : ");
 		
@@ -78,5 +108,5 @@ public class LoginController {
 		ks.killSession(req);
 		
 		return "member/logout";
-	}
+	}*/
 }

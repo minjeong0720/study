@@ -18,9 +18,13 @@ public class LoginDAOImpl implements LoginDAO {
 
 	
 	@Override
-	public List<MemberVO> loginCheck(MemberVO mvo) {
+	//public List<MemberVO> loginCheck(MemberVO mvo) {
+	public MemberVO loginCheck(MemberVO mvo) throws Exception{
 		// TODO Auto-generated method stub
-		return sqlSession.selectList("loginCheck", mvo);
+		
+		//loginCheck(MemberVO mvo)에 파라미터 값이 전달되며 xml에서 조회한 데이터들은 MemberVO 에 담긴다.
+		//return sqlSession.selectList("loginCheck", mvo);
+		return sqlSession.selectOne("loginCheck", mvo);
 	}
 
 

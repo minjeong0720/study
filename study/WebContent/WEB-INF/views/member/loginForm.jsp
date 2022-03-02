@@ -17,7 +17,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="../../images/favicon.png">
+  <link rel="shortcut icon" href="../../images/LOGIN.png">
   
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
@@ -26,15 +26,15 @@
 		$("#mid").attr('placeholder', '아이디');
 		$("#mpw").attr('placeholder', '비밀번호');
 		
-		$("#loginbtn").click(function(){
-			console.log("loginbtn >>> : ");
-			/*
+		$("#submit").click(function(){
+			console.log("submit >>> : ");
+			
 			//controller login 으로 이동
 			$('#loginForm').attr({
 				'action':'login.kmj',
 				'method':'POST',
 				'enctype':'application/x-www-form=urlencoded'
-			}).submit();*/
+			}).submit();
 		});
 	});
 </script>
@@ -48,12 +48,12 @@
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
               <div class="brand-logo">
-                <img src="../../images/logo.svg" alt="logo">
+                <img src="../../images/LOGIN.png" alt="login">
               </div>
-              <h4>Hello! let's get started</h4>
-              <h6 class="font-weight-light">Sign in to continue.</h6>
+              <h6>환영합니다!</h6>
+              <h6 class="font-weight-light"> </h6>
               
-              <form name="login" id="login" method="post" action="login" class="pt-3">
+              <form name="loginForm" id="loginForm" class="pt-3">
                 <div class="form-group">
                   <input type="text" id="mid" name="mid" placeholder="ID" class="form-control form-control-lg" >
                 </div>
@@ -63,25 +63,11 @@
                 
                 <div class="mt-3">
                   <!-- <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../">SIGN IN</a> -->
-                  <input type="submit" id="loginbtn" value="loginbtn" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">
+                  <button type="submit" id="submit" name="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">LOGIN</button>
                 </div>
                 
-                <div class="my-2 d-flex justify-content-between align-items-center">
-                  <div class="form-check">
-                    <label class="form-check-label text-muted">
-                      <input type="checkbox" class="form-check-input">
-                      Keep me signed in
-                    <i class="input-helper"></i></label>
-                  </div>
-                  <a href="#" class="auth-link text-black">Forgot password?</a>
-                </div>
-                <div class="mb-2">
-                  <button type="button" class="btn btn-block btn-facebook auth-form-btn">
-                    <i class="ti-facebook mr-2"></i>Connect using facebook
-                  </button>
-                </div>
                 <div class="text-center mt-4 font-weight-light">
-                  Don't have an account? <a href="register.kmj" class="text-primary">Create</a>
+                 	 아직 회원이 아니신가요? <a href="register.kmj" class="text-primary">Create</a>
                 </div>
               </form>
             </div>

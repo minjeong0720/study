@@ -1,8 +1,8 @@
 package a.b.c.com.member.service;
 
-import java.util.List;
 
 import a.b.c.com.member.vo.MemberVO;
+
 
 public interface MemberService {
 

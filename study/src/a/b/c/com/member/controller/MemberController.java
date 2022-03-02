@@ -11,6 +11,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import a.b.c.com.member.service.MemberService;
 import a.b.c.com.member.vo.MemberVO;
 
+/* <상대경로>
+1.   / : 최상위 경로
+2.  ./ : 현재 경로
+3. ../ : 상위 디렉토리
+*/
+
 @Controller
 public class MemberController {
 	
@@ -31,33 +37,30 @@ public class MemberController {
 		return "member/MemForm";
 	}
 	
-	@RequestMapping(value="registerForm", method=RequestMethod.GET)
-	public String registerForm(Model Model) {
-		logger.info("MemberController registerForm 함수 진입 >>> : ");
+	//회원가입 입력 폼
+	@RequestMapping(value="register", method=RequestMethod.GET)
+	public String register(Model Model) {
+		logger.info("MemberController register 함수 진입 >>> : ");
 		
 		return "member/register";
 	}
 	
-	@RequestMapping(value="memInsert", method=RequestMethod.GET)
+	@RequestMapping(value="memberInsert", method=RequestMethod.POST)
 	public String memberInsert(MemberVO mvo , Model Model) {
-		System.out.println("dddd");
+		System.out.println("MemberController memberInsert() 진입 >>> : ");
 
-		logger.info("MemberController register 함수 진입 >>> :");
 		logger.info("MemberController mvo.getMid() >>> : " + mvo.getMid());
 		logger.info("MemberController mvo.getMpw() >>> : " + mvo.getMpw());
 		logger.info("MemberController mvo.getMname() >>> : " + mvo.getMname());
 		
-		
-		
 		int insertCnt = memberservice.memberInsert(mvo);
 		if(insertCnt > 0) {
-				logger.info("MemberController register nCnt >>> : " + insertCnt);
+				logger.info("MemberController memberInsert insertCnt >>> : " + insertCnt);
 				
-				
-				return "member/register";
+				return "member/loginForm";
 		}
 		
-		return "member/registerForm";
+		return "member/loginForm";
 	}
 	
 	
@@ -85,9 +88,9 @@ public class MemberController {
 	public String loginForm() {
 		return "member/loginForm";
 	}
-	
+	/*
 	@GetMapping("/register")
 	public String register() {
 		return "member/register";
-	}
+	}*/
 }
