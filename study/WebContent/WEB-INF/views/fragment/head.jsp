@@ -1,6 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
+<%@ page import="java.util.List" %>
+<%@ page import="a.b.c.com.member.vo.MemberVO" %>
+<%@ page import="java.util.ArrayList" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MAIN</title>
+<style type="text/css">
+	.m{
+		text-align: center;
+	}
+</style>
+</head>
+<body> 
+
+
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
         <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="images/logo.svg" class="mr-2" alt="logo"></a>
@@ -73,17 +91,20 @@
           </li>
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="images/faces/face28.jpg" alt="profile">
+              <img src="images/faces/face28.jpg" alt="profile">  
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item">
                 <i class="ti-settings text-primary"></i>
                 Settings
               </a>
-              <a class="dropdown-item">
+              
+          <!-- Logout 성공 -->
+              <a class="dropdown-item" href="logout.kmj">
                 <i class="ti-power-off text-primary"></i>
                 Logout
               </a>
+              
             </div>
           </li>
           <li class="nav-item nav-settings d-none d-lg-flex">
@@ -97,3 +118,5 @@
         </button>
       </div>
     </nav>
+   </body>
+ </html>

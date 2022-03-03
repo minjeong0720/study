@@ -1,0 +1,40 @@
+package a.b.c.com.login.dao;
+
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import a.b.c.com.member.vo.MemberVO;
+
+@Repository //dao bean으로 등록함
+public class LoginDAOImpl implements LoginDAO {
+	Logger logger = Logger.getLogger(LoginDAOImpl.class);
+	
+	//의존관계 주입
+	@Autowired(required=false)
+	private SqlSessionTemplate sqlSession;
+
+	
+	@Override
+	public MemberVO loginCheck(MemberVO mvo) throws Exception {
+	//public List<MemberVO> loginCheck(MemberVO mvo) throws Exception{
+		// TODO Auto-generated method stub
+		
+		//loginCheck(MemberVO mvo)에 파라미터 값이 전달되며 xml에서 조회한 데이터들은 MemberVO 에 담긴다.
+		
+		logger.info("LoginDAOImpl loginCheck mvo >>> : " + mvo);
+		
+		//return sqlSession.selectList("loginCheck", mvo);
+		
+		return sqlSession.selectOne("loginCheck", mvo);
+		/*sqlSession.selectOne();
+			하나의 객체만 return 하는 것
+			
+			한개 이상이거나 NULL이면 Exception 발생*/
+	}
+
+
+}

@@ -9,7 +9,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Skydash Admin</title>
+  <title>Study Project</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="vendors/feather/feather.css">
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
@@ -33,7 +33,7 @@
     <jsp:include page="head.kmj"></jsp:include>
     <!--<c:import url="head.kmj" /> -->
     <!-- end of head -->
-    
+    <h8><a href="loginForm.kmj">스프링 회원 : 로그인</a></h8>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
       <!-- partial:partials/_settings-panel.html -->

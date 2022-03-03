@@ -6,8 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="logo"/>
+		<item key="selection" value="face"/>
 		<list key="findhistory">
+			<item value="face"/>
+			<item value="form"/>
 			<item value="logo"/>
 			<item value="scss"/>
 			<item value="font"/>
@@ -21,7 +23,6 @@
 			<item value="&lt;div class=&quot;main-panel&quot;&gt;"/>
 			<item value="Advanced Tabl"/>
 			<item value="Incs234"/>
-			<item value="content-wrapper"/>
 		</list>
 		<list key="replacehistory">
 		</list>

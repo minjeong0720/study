@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "a.b.c.com.login.dao.LoginDAO">
+
+<!-- 파라미터로 mid,mpw 받고, 조회한 결과 값을  resultType의 memberVO로 전달한다.-->
+<select id="loginCheck" parameterType="memberVO" resultType="memberVO">
+		SELECT A.MID MID,
+			   A.MPW MPW
+		FROM   SPRING_MEMBER A
+		WHERE A.DELETEYN = 'Y'
+		AND   A.MID = #{mid, jdbcType=VARCHAR}
+		AND	  A.MPW = #{mpw, jdbcType=VARCHAR}
+</select>
+</mapper>

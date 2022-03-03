@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="a.b.c.com.member.dao.MemberDAO">
+
+<insert id="memberInsert" parameterType="memberVO">
+
+	INSERT INTO project(
+						MID,			<!-- COLUMN 1 -->
+					    MPW,		    <!-- COLUMN 2 -->
+					    MNAME,			<!-- COLUMN 3 -->
+					    DELETEYN,		<!-- COLUMN 4 -->
+					    INSERTDATE,		<!-- COLUMN 5 -->
+					    UPDATEDATE		<!-- COLUMN 6 -->
+					) VALUES (
+							   #{mid, jdbcType=VARCHAR},		<!-- placeholer 1 --> 
+							   #{mpw, jdbcType=VARCHAR}, 		<!-- placeholer 2 --> 
+                  			   #{mname, jdbcType=VARCHAR},	    <!-- placeholer 3 -->
+	                           'Y',							    <!-- placeholer 4 -->
+	                           SYSDATE,  						<!-- placeholer 5 -->
+	                           SYSDATE 						    <!-- placeholer 6 -->
+							)
+</insert>
+
+<!-- 파라미터로 mid,mpw 받고, 조회한 결과 값을  resultType의 memberVO로 전달한다.-->
+<select id="loginCheck" parameterType="memberVO">
+		SELECT A.MID MID,
+			   A.MPW MPW
+		FROM   PROJECT A
+		WHERE A.DELETEYN = 'Y'
+		AND   A.MID = #{mid, jdbcType=VARCHAR}
+		AND	  A.MPW = #{mpw, jdbcType=VARCHAR}
+</select>
+
+</mapper>

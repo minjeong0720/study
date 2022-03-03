@@ -1,0 +1,38 @@
+package a.b.c.com.login.service;
+
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import a.b.c.com.login.dao.LoginDAO;
+import a.b.c.com.member.vo.MemberVO;
+
+@Service //service bean으로 등록
+@Transactional
+public class LoginServiceImpl implements LoginService {
+	Logger logger = Logger.getLogger(LoginServiceImpl.class);
+	
+	private LoginDAO loginDAO;
+	
+	@Autowired(required=false)
+	public LoginServiceImpl(LoginDAO loginDAO) {
+		this.loginDAO = loginDAO;
+	}
+
+	@Override
+	public String loginCheck(MemberVO mvo, HttpSession session) {
+		// TODO Auto-generated method stub
+		logger.info("LoginServiceImpl loginCheck() 함수 진입 >>> : ");
+		
+		logger.info("LoginServiceImpl loginCheck mvo >>> : " + mvo);
+		
+		return loginDAO.loginCheck(mvo);
+	}
+
+
+}

@@ -28,7 +28,7 @@
 	}
 %>
 
-<%= mid %> 님 로그인 중
+<%= mid %> 님 로그인 중<br>
 <a href="logout.kmj">로그아웃 하기</a>
 <h3 class="m">MAIN PAGE</h3>
 

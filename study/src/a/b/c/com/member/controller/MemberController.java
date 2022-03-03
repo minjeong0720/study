@@ -1,12 +1,21 @@
 package a.b.c.com.member.controller;
 
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import a.b.c.com.member.service.MemberService;
 import a.b.c.com.member.vo.MemberVO;
@@ -29,6 +38,7 @@ public class MemberController {
 	public MemberController(MemberService memberservice) {
 		this.memberservice = memberservice;
 	}
+	
 	
 	//회원가입 입력 폼
 	@GetMapping("memForm")
@@ -83,12 +93,12 @@ public class MemberController {
 	public String content() {
 		return "fragment/content";
 	}
-	
+	/*
 	@GetMapping("/loginForm")
 	public String loginForm() {
 		return "member/loginForm";
 	}
-	/*
+	
 	@GetMapping("/register")
 	public String register() {
 		return "member/register";

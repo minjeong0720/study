@@ -5,11 +5,11 @@
 
 <!-- 파라미터로 mid,mpw 받고, 조회한 결과 값을  resultType의 memberVO로 전달한다.-->
 <select id="loginCheck" parameterType="memberVO" resultType="memberVO">
-		SELECT mid,
-			   mpw
-		FROM   project 
-		WHERE deleteyn = 'Y'
-		AND   mid = #{mid, jdbcType=VARCHAR}
-		AND	  mpw = #{mpw, jdbcType=VARCHAR}
+		SELECT A.MID MID,
+			   A.MPW MPW
+		FROM   PROJECT A
+		WHERE A.DELETEYN = 'Y'
+		AND   A.MID = #{mid, jdbcType=VARCHAR}
+		AND	  A.MPW = #{mpw, jdbcType=VARCHAR}
 </select>
 </mapper>
